@@ -34,7 +34,7 @@ options.headless = True
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 driver.get("https://www.reftown.com/games.asp?openonly=1")
-driver.find_element(By.NAME, "Username").send_keys(os.getenv('USERNAME'))
+driver.find_element(By.NAME, "Username").send_keys(os.getenv('EMAIL'))
 driver.find_element(By.NAME, "Password").send_keys(os.getenv('PASSWORD'))
 driver.find_element(By.XPATH, "/html/body/div[3]/div[2]/div[2]/form/p[5]/input").click()
 WebDriverWait(driver, 30).until(EC.url_changes("https://www.reftown.com/login.asp"))
