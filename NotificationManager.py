@@ -21,5 +21,5 @@ class NotificationManager:
         conn.ehlo()
         conn.starttls()
         conn.login(os.getenv('FROM_EMAIL'), os.getenv('FROM_EMAIL_PASSWORD'))
-        conn.sendmail(os.getenv('FROM_EMAIL'), os.getenv('EMAIL'), message)
+        conn.sendmail(os.getenv('FROM_EMAIL'), os.getenv('EMAIL'), f"Subject: New game found \n\n\ {message}")
         conn.quit()
